@@ -9,10 +9,14 @@ const int maxIterations = 100; // Maximum number of iterations used for Mandelbr
  * @param   iteration   Number of iterations for the pixel.
  * @return  Color for the pixel based on the iteration count.
  */
-Color GetColorForIteration(int iteration)
-{
+Color GetColorForIteration(int iteration) {
+    if (iteration == maxIterations) return BLACK;
+
     float t = (float)iteration / maxIterations;
-    return Color{(unsigned char)(255 * t), 0, 0, 255};
+    unsigned char r = (unsigned char)(9 * (1 - t) * t * t * t * 255);
+    unsigned char g = (unsigned char)(15 * (1 - t) * (1 - t) * t * t * 255);
+    unsigned char b = (unsigned char)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
+    return Color{ r, g, b, 255 };
 }
 
 /*
