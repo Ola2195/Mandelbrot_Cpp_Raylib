@@ -28,7 +28,7 @@ The Mandelbrot set is a famous fractal that is defined as the set of complex num
 
 ### Example Output
 
-![Mandelbrot Set](screenshot.png)
+![Mandelbrot Set](screenshot_multi.png)
 
 ## Future Development
 
